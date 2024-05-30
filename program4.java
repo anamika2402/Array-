@@ -1,20 +1,30 @@
-import java.util.*;
+/*WAP to search a specific element in an array and return its index .Ask the user to provide the number to search, also to take size and elements 
+ * input from the user */
+import java.io.*;
 class program4{
-
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the size of an array :");
-		int size = sc.nextInt();
-		int arr[] = new int[size];
+	public static void main(String[] args)throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the size of an array :");
+		int size = Integer.parseInt(br.readLine());
+		int[] arr = new int[size];
+		System.out.println("Enter the elements :");
 		for(int i=0; i<arr.length; i++){
-			arr[i] = sc.nextInt();
+			arr[i] = Integer.parseInt(br.readLine());
 		}
-		int sum=0;
+		int num;
+		System.out.println("Enter the element to search :");
+		num=Integer.parseInt(br.readLine());
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]%2!=0){
-				sum =sum+arr[i];
+			if(arr[i]==num){
+				System.out.println(arr[i]+" found at index "+i);
+			}
+			else{
+				System.out.println("Element not found" );
 			}
 		}
-		System.out.println("The sum of odd elements is "+sum);
 	}
 }
+
+
+
+

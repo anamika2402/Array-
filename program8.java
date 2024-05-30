@@ -1,17 +1,18 @@
-import java.util.*;
+import java.io.*;
 class program8{
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the count of an employees :");
-		int size = sc.nextInt();
-		int arr[] = new int[size];
-		System.out.print("Enter the age of every employee :");
+	public static void main(String[] args)throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the size of an array :");
+		int size = Integer.parseInt(br.readLine());
+		int arr[]=new int[size];
+		System.out.println("Enter the elements :");
 		for(int i=0; i<arr.length; i++){
-			arr[i] = sc.nextInt();
+			arr[i]=Integer.parseInt(br.readLine());
 		}
 		for(int i=0; i<arr.length; i++){
-			System.out.println("The age of an "+i+" employee is "+arr[i]);
-
+			if(arr[i]>5 && arr[i]<9){
+				System.out.println(arr[i]+" is greater then 5 but less than 9");
+			}
 		}
 	}
 }

@@ -1,18 +1,31 @@
+/*WAP to count even numbers in an array where you have to take the size and elements from the user and also print the even numbers too*/
 
-import java.util.Scanner;
+import java.io.*;
 class program1{
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args)throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the size of an array :");
+		int size = Integer.parseInt(br.readLine());
+		int arr[] = new int[size];
+		int count=0;
+		for(int i=0; i<arr.length; i++){
+			System.out.print("Enter element :");
 
-		int arr[] = new int[10];
-		for(int i=0; i<10; i++){
-			System.out.print("Enter "+i+" element :");
-			 arr[i] = sc.nextInt();
+			arr[i] = Integer.parseInt(br.readLine());
 		}
-		for(int i=0; i<10; i++){
-			System.out.print(arr[i]+" ");
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]%2==0){
+				count++;
+				System.out.print(arr[i]+" ");
+				System.out.println();
+			}
 		}
+		System.out.println("Count of even numbers is :"+count);
 	}
 }
 
+
+
+
+		
 
