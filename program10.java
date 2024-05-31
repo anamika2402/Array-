@@ -1,24 +1,28 @@
-/* WAP to print the maximum element in an array */
 import java.io.*;
 class program10{
-	public static void main(String[] args)throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter the size of an array :");
-		int size = Integer.parseInt(br.readLine());
-		int arr[] = new int[size];
-		System.out.println("Enter the elements :");
+        public static void main(String[] args)throws IOException{
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                System.out.println("Enter the size of an array :");
+                int size = Integer.parseInt(br.readLine());
+                int[] arr=new int[size];
+                for(int i=0; i<arr.length; i++){
+                        arr[i]=Integer.parseInt(br.readLine());
+                }
+		int prod=1;
+                for(int i=0; i<arr.length; i++){
+                         int temp=arr[i];
 
-		for(int i=0; i<arr.length; i++){
-			arr[i] = Integer.parseInt(br.readLine());
-		}
-		int max=arr[0];
-		for(int i=1; i<arr.length; i++){
-			if(arr[i]>max){
-				max=arr[i];
-			}
-		}
-		System.out.println("The maximum element in an array is "+max);
-	}
+                        int count=0;
+                        while(temp>=1){
+                                if(arr[i]%temp==0){
+                                        count++;
+                                }
+                                temp--;
+                        }
+                        if(count==2){
+                        	prod=prod*arr[i];        
+                        }
+                }
+		System.out.println("The product all prime numbers in an array is :"+prod);
+        }
 }
-
-			

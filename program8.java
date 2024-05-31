@@ -4,19 +4,23 @@ class program8{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter the size of an array :");
 		int size = Integer.parseInt(br.readLine());
-		int arr[]=new int[size];
-		System.out.println("Enter the elements :");
+		int[] arr=new int[size];
 		for(int i=0; i<arr.length; i++){
 			arr[i]=Integer.parseInt(br.readLine());
 		}
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]>5 && arr[i]<9){
-				System.out.println(arr[i]+" is greater then 5 but less than 9");
+			 int temp=arr[i];
+	
+			int count=0;
+			while(temp>=1){
+				if(arr[i]%temp==0){
+					count++;
+				}
+				temp--;
+			}
+			if(count>2){
+				System.out.print(arr[i]+" ");
 			}
 		}
 	}
 }
-
-
-
-
