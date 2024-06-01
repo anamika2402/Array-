@@ -4,25 +4,21 @@ class program7{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int [] arr = new int[size];
-                System.out.print("Enter the elements :");
+                char[] arr=new char[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i] = Integer.parseInt(br.readLine());
-		}
-		for(int i=0 ;i<arr.length; i++){
-			if(arr.length%2!=0 && arr.length>=5){
-				if(i%2!=0){
-					System.out.print(arr[i]+" ");
-				}
+                        arr[i]=(char)(br.read());
+                        br.skip(1);
+                }
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]>=97 && arr[i]<=122){
+				arr[i]=(char)(arr[i]-32);
 			}
 			else{
-				if(i%2==0){
-
-					System.out.print(arr[i]+" ");
-				}
+				arr[i]=arr[i];
 			}
+		}
+		for(int i=0; i<arr.length; i++){
+			System.out.print(arr[i]+" ");
 		}
 	}
 }
-
-

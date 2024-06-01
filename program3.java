@@ -4,23 +4,22 @@ class program3{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int [] arr = new int[size];
-                System.out.print("Enter the elements :");
+                int[] arr=new int[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i] = Integer.parseInt(br.readLine());
-		}
-		System.out.println("Enter the specific element :");
-		int elem = Integer.parseInt(br.readLine());
-		int count = 0;
-		int f=0;
+                        arr[i]=Integer.parseInt(br.readLine());
+                }
+		int max=arr[0];
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]==elem){
-				count++;
+			if(arr[i]>max){
+				max=arr[i];
 			}
 		}
-		
-
-		System.out.println("Number "+elem+" occured "+count+" times in an array ");
+		int max2=arr[0];
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]>=max2 && arr[i]<max){
+				max2=arr[i];
+			}
+		}
+		System.out.println("The second maximum element in an array :"+max2);
 	}
 }
-

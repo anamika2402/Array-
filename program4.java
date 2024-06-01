@@ -4,24 +4,25 @@ class program4{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int [] arr = new int[size];
-                System.out.print("Enter the elements :");
+                int[] arr=new int[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i] = Integer.parseInt(br.readLine());
-		}
+                        arr[i]=Integer.parseInt(br.readLine());
+                }
+		System.out.print("Enter the element :");
+		int num=Integer.parseInt(br.readLine());
+		int cnt=0;
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]%2==0){
-				arr[i]=0;
-			}
-			else{
-				arr[i]=1;
+			if(arr[i]==num){
+				cnt++;
 			}
 		}
-		for(int i=0; i<arr.length; i++){
-			System.out.print(arr[i]+" ");
+		if(cnt>=2){
+			System.out.println(num+" occured more than or equal to 2 times ");
 		}
+		else{
+			System.out.println(num+" not occured more than or equal to 2 times ");
+		}
+			
 	}
 }
-
-
 
