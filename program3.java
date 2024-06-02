@@ -4,22 +4,27 @@ class program3{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int[] arr=new int[size];
+                int[] arr= new int[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i]=Integer.parseInt(br.readLine());
+                        arr[i] = Integer.parseInt(br.readLine());
                 }
-		int max=arr[0];
-		for(int i=0; i<arr.length; i++){
-			if(arr[i]>max){
-				max=arr[i];
+		int f=0;
+		for(int i=0; i<arr.length/2; i++){
+			if(arr[i] == arr[size-1-i]){
+				f=0;
+			}
+			else{
+				f=1;
+				break;
 			}
 		}
-		int max2=arr[0];
-		for(int i=0; i<arr.length; i++){
-			if(arr[i]>=max2 && arr[i]<max){
-				max2=arr[i];
-			}
+		if(f==1){
+			System.out.println("Given array is not a pallindrome");
+			
 		}
-		System.out.println("The second maximum element in an array :"+max2);
+		else{
+			System.out.println("Given array is a pallindrome");
+		}
 	}
 }
+

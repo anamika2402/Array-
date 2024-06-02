@@ -4,22 +4,22 @@ class program2{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int[] arr=new int[size];
+                int[] arr= new int[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i]=Integer.parseInt(br.readLine());
+                        arr[i] = Integer.parseInt(br.readLine());
                 }
-		int min=arr[0];
-		int max=arr[0];
+		int evensum=0;
+		int oddsum=0;
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]>max){
-				max=arr[i];
+			if(arr[i]%2==0){
+				evensum+=arr[i];
 			}
-			if(arr[i]<min){
-				min=arr[i];
+			else{
+				oddsum+=arr[i];
 			}
 		}
-		System.out.println("The differnce between the minimum and maximim element in an array is "+(max-min));
+		System.out.println("The count of even numbers in an array :"+evensum);
+		System.out.println("The count of odd numbers in an array :"+oddsum);
 	}
 }
-
 
