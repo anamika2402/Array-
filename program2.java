@@ -8,18 +8,26 @@ class program2{
                 for(int i=0; i<arr.length; i++){
                         arr[i] = Integer.parseInt(br.readLine());
                 }
-		int evensum=0;
-		int oddsum=0;
+		int sum=0;
+	       	int count2=0;
 		for(int i=0; i<arr.length; i++){
-			if(arr[i]%2==0){
-				evensum+=arr[i];
+			int temp=1;
+			int count=0;
+			while(temp<=arr[i]){
+				if(arr[i]%temp==0){
+					count++;
+				}
+				temp++;
 			}
-			else{
-				oddsum+=arr[i];
+			if(count==2){
+				sum=sum+arr[i];
+				count2++;
 			}
+				
 		}
-		System.out.println("The count of even numbers in an array :"+evensum);
-		System.out.println("The count of odd numbers in an array :"+oddsum);
+		System.out.println("The sum of all prime numbers is "+sum);
+		System.out.println("The count of all prime numbers is "+count2);
+
 	}
 }
 

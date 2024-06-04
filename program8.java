@@ -2,25 +2,28 @@ import java.io.*;
 class program8{
         public static void main(String[] args)throws IOException{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                System.out.println("Enter the size of an array :");
+                System.out.print("Enter the size of an array :");
                 int size = Integer.parseInt(br.readLine());
-                int[] arr=new int[size];
+                char[] arr= new char[size];
                 for(int i=0; i<arr.length; i++){
-                        arr[i]=Integer.parseInt(br.readLine());
+                        arr[i]=(char)(br.read());
+			br.skip(1);
                 }
-		int min=arr[0];
-		for(int i=0; i<arr.length; i++){
-			if(arr[i]<=min){
-				min=arr[i];
-			}
+		System.out.println("Array before Reversing :");
+		for(int i=0; i<arr.length; ){
+			System.out.print(arr[i]+" ");
+			i+=2;
 		}
-		int min2=arr[0];
-		for(int i=0; i<arr.length; i++){
-			if(arr[i]<=min2 && arr[i]>min){
-				min2=arr[i];
-			}
+		for(int i=0; i<arr.length/2; i++){
+			char temp=arr[i];
+			arr[i]=arr[size-1-i];
+			arr[size-1-i]=temp;
 		}
-		System.out.println("The second smallest element is "+min2);
+		System.out.print("Array after reversing :");
+		for(int i=0; i<arr.length;){
+			System.out.print(arr[i]+" ");
+			i+=2;
+		}
 	}
 }
 
