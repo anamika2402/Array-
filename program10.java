@@ -1,32 +1,30 @@
+
 import java.io.*;
 class program10{
-        public static void main(String[] args)throws IOException{
-                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-                System.out.print("Enter the size of an array :");
-                int size = Integer.parseInt(br.readLine());
-                int[] arr= new int[size];
-                for(int i=0; i<arr.length; i++){
-                        arr[i]=Integer.parseInt(br.readLine());
-                }
-		int max=arr[0];
-		int max2=arr[1];
-		for(int i=1; i<arr.length; i++){
-			if(arr[i]>max){
-				max=arr[i];
+	public static void main(String[] args)throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Enter the number of rows and columns :");
+		int rows = Integer.parseInt(br.readLine());
+		int arr[][] = new int[rows][rows];
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				arr[i][j] = Integer.parseInt(br.readLine());
 			}
 		}
-		for(int i=1; i<arr.length; i++){
-			if(arr[i]>=max2 && arr[i]<max){
-				max2=arr[i];
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				System.out.print(arr[i][j]+"\t");
+			}
+			System.out.println();
+		}
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<arr[i].length; j++){
+				if((i==0 || i==rows-1) && (j==0 || j==rows-1)){
+					System.out.print(arr[i][j]+" , ");
+				}
 			}
 		}
-		int max3=arr[1];
-		for(int i=1; i<arr.length; i++){
-			if(arr[i]>=max3 && arr[i]<max2){
-				max3=arr[i];
-			}
-		}
-		System.out.println("The third largest element in an array is "+max3);
 	}
 }
+
 
